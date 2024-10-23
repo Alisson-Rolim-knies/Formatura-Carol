@@ -1,0 +1,53 @@
+.hero {
+    padding-top: 64px; /* Adiciona um espaço de 64px no topo da seção hero */
+    padding-bottom: 100px; /* Adiciona um espaço de 100px na parte inferior da seção hero */
+    background-image: url(../images/uam\ experiencia.png); /* Define uma imagem de fundo para a seção hero */
+    background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+    background-size: cover; /* Faz com que a imagem de fundo cubra todo o contêiner, ajustando-se ao tamanho */
+    position: relative; /* Define a posição como relativa, permitindo o uso de elementos posicionados de forma absoluta dentro deste contêiner */
+
+    .container {
+        position: relative; /* A posição relativa aqui permite a manipulação de elementos internos sem influenciar o layout externo */
+    }
+
+    &::before {
+        position: absolute; /* Define uma pseudo-elemento antes do conteúdo, com posição absoluta */
+        top: 0; /* Posiciona o pseudo-elemento no topo do contêiner */
+        left: 0; /* Posiciona o pseudo-elemento à esquerda do contêiner */
+        width: 100%; /* Define a largura do pseudo-elemento para cobrir 100% da largura do contêiner */
+        height: 100%; /* Define a altura do pseudo-elemento para cobrir 100% da altura do contêiner */
+        background-color: #000; /* Aplica uma cor de fundo preta ao pseudo-elemento */
+        content: ''; /* Insere o pseudo-elemento sem nenhum conteúdo textual */
+        opacity: .3; /* Define a opacidade do pseudo-elemento como 70%, criando um efeito de sobreposição */
+    }
+
+    &__text {
+        margin-top: 64px; /* Adiciona uma margem de 64px no topo do texto */
+        margin-bottom: 64px; /* Adiciona uma margem de 64px na parte inferior do texto */
+        font-size: 40px; /* Define o tamanho da fonte como 40px */
+        line-height: 56px; /* Define o espaçamento entre linhas como 56px */
+        font-weight: 800; /* Define a espessura da fonte como 800, tornando-a bem pesada */
+        text-align: center; /* Centraliza o texto horizontalmente no contêiner */
+    }
+
+    &__logo {
+        display: block; /* Define o logo como um bloco, necessário para centralizar com as margens */
+        margin: 0 auto; /* Centraliza horizontalmente o logo no contêiner */
+        height: 80px; /* Define a altura da imagem do logo como 80px */
+    }
+
+    @media (max-width:640px) {
+
+        padding: 40px 0;
+
+        &__logo{
+            height: 40px;
+        }
+
+        &__text {
+            font-size: 22px;
+            line-height: 24px;
+            margin: 24px 0;
+        }
+    }
+}
